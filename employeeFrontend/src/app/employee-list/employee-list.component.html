@@ -1,0 +1,57 @@
+<div class="container-fluid ">
+  <div class="row  justify-content-center">
+    <div class="col-10 ">
+      <mat-form-field  style="margin-top: 5px">
+        <input matInput placeholder="Search" [formControl]="search" style="height: 10px">
+      </mat-form-field>
+      <div class="my-custom-scrollbar" >
+        <table mat-table [dataSource]="employeeListService" class="table table-sm table-striped"
+               matSort matSortActive="empNo" matSortDirection="asc" matSortDisableClear>
+          <ng-container matColumnDef="empNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > No</th>
+            <td mat-cell *matCellDef="let employe"> {{employe.empNo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="fullName">
+            <th mat-header-cell *matHeaderCellDef> Name</th>
+            <td mat-cell *matCellDef="let employe"> {{employe.firstName}} {{employe.lastName}} </td>
+          </ng-container>
+          <ng-container matColumnDef="birthDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Birth Date</th>
+            <td mat-cell *matCellDef="let employe"> {{employe.birthDate}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender</th>
+            <td mat-cell *matCellDef="let employe"> {{employe.gender}} </td>
+          </ng-container>
+          <ng-container matColumnDef="hireDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Hire date</th>
+            <td mat-cell *matCellDef="let employe"> {{employe.hireDate}} </td>
+          </ng-container>
+          <ng-container matColumnDef="salary">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Actual Salary</th>
+            <td mat-cell *matCellDef="let employe"> {{employe.actualSalary}} </td>
+          </ng-container>
+          <ng-container matColumnDef="title" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Actual title</th>
+            <td mat-cell *matCellDef="let employe"> {{employe.actualTitle}} </td>
+          </ng-container>
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef >Edit</th>
+            <td mat-cell *matCellDef="let employe"><a style="height: 10px" (click)="openDialog(employe)">Edit </a></td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="colonnes; sticky: true" style="height: 20px;font-weight: bold"></tr>
+          <tr mat-row *matRowDef="let row; columns: colonnes;" style="height: 10px"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4"></div>
+    <div class="col-6">
+      <mat-paginator [length]="length" [pageSize]="25"
+                     [pageSizeOptions]="[25, 50, 100]"></mat-paginator>
+    </div>
+  </div>
+</div>
+
+

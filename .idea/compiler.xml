@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="testhibernate" />
+        <module name="employeeRestApi" />
+        <module name="springBackend" />
+        <module name="demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="employeeBackend" target="1.8" />
+      <module name="oneshot" target="1.8" />
+      <module name="test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="employeeBackend" options="-parameters" />
+      <module name="employeeRestApi" options="-parameters" />
+      <module name="oneshot" options="-parameters" />
+      <module name="test" options="-parameters" />
+      <module name="testhibernate" options="-parameters" />
+    </option>
+  </component>
+</project>

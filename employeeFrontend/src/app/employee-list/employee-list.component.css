@@ -1,0 +1,16 @@
+.test {
+  border-style: dashed;
+  border-width: 5px;
+
+}
+b{
+
+}
+.my-custom-scrollbar {
+  position: relative;
+  height: 400px;
+  overflow: auto;
+}
+th{
+  font-weight: bolder;
+}
